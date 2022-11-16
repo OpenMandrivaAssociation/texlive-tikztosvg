@@ -27,14 +27,9 @@ mkdir -p %{buildroot}%{_datadir}
 cp -a texmf-dist %{buildroot}%{_datadir}
 
 %files
-%{_texmfdistdir}/texmf-dist/scripts/tikztosvg
-%doc %{_texmfdistdir}/texmf-dist/doc/support/tikztosvg
-%{_texmfdistdir}/texmf-dist
-%{_texmfdistdir}/texmf-dist/doc
-%doc %{_texmfdistdir}/texmf-dist/doc/man
-%doc %{_texmfdistdir}/texmf-dist/doc/man/man1
-%doc %{_texmfdistdir}/texmf-dist/doc/man/man1/tikztosvg.man1.pdf
-%doc %{_texmfdistdir}/texmf-dist/doc/man/man1/tikztosvg.1
+%{_texmfdistdir}/scripts/tikztosvg
+%doc %{_texmfdistdir}/doc/support/tikztosvg
+%doc %{_texmfdistdir}/doc/man/man1/*
 
 %post -p %{_sbindir}/texlive.post
 
