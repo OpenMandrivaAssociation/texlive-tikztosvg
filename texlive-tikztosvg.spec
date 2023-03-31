@@ -1,6 +1,6 @@
 Name:		texlive-tikztosvg
 Version:	60289
-Release:	1
+Release:	2
 Summary:	A utility for rendering TikZ diagrams to SVG
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/tikztosvg
