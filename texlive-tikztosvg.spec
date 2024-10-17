@@ -3,7 +3,7 @@ Version:	60289
 Release:	2
 Summary:	A utility for rendering TikZ diagrams to SVG
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/tikztosvg
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/tikztosvg
 License:	gpl3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/tikztosvg.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/tikztosvg.doc.r%{version}.tar.xz
