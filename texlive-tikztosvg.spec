@@ -1,37 +1,22 @@
-Name:		texlive-tikztosvg
-Version:	60289
-Release:	2
+%global tl_name tikztosvg
+%global tl_revision 60289
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.3.0
+Release:	%{tl_revision}.1
 Summary:	A utility for rendering TikZ diagrams to SVG
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/tikztosvg
+URL:		https://www.ctan.org/tex-archive/support/tikztosvg
 License:	gpl3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/tikztosvg.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/tikztosvg.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/tikztosvg.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/tikztosvg.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Requires:	texlive(tikztosvg.bin)
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This package provides a shell script that calls XeTeX and
-pdf2svg to convert TikZ environments to SVG files.
+This package provides a shell script that calls XeTeX and pdf2svg to
+convert TikZ environments to SVG files.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_datadir}
-cp -a texmf-dist %{buildroot}%{_datadir}
-
-%files
-%{_texmfdistdir}/scripts/tikztosvg
-%doc %{_texmfdistdir}/doc/support/tikztosvg
-%doc %{_texmfdistdir}/doc/man/man1/*
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
