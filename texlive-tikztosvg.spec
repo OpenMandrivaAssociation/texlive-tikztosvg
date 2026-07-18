@@ -1,5 +1,6 @@
 %global tl_name tikztosvg
 %global tl_revision 60289
+%global tl_bin_links tikztosvg:%{_texmfdistdir}/scripts/tikztosvg/tikztosvg
 
 Name:		texlive-%{tl_name}
 Epoch:		1
@@ -15,6 +16,8 @@ BuildArch:	noarch
 BuildSystem:	texlive
 Requires:	texlive(tikztosvg.bin)
 Provides:	texlive(%{tl_name}) = %{tl_revision}
+Provides:	texlive(%{tl_name}.bin) = %{tl_revision}
+Provides:	texlive-%{tl_name}.bin = %{EVRD}
 
 %description
 This package provides a shell script that calls XeTeX and pdf2svg to
